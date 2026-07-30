@@ -1,0 +1,68 @@
+---
+const categories = [
+  {
+    title: "Cartuchos de tinta",
+    description: "Compatibles y originales para las principales marcas",
+  },
+  {
+    title: "Tóner",
+    description: "Para impresoras láser, todas las capacidades",
+  },
+  {
+    title: "Impresoras",
+    description: "Multifunción e impresoras de oficina",
+  },
+];
+---
+
+<section id="servicios" class="w-full py-16 md:py-24 px-6 bg-slate-50">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="text-center max-w-2xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-semibold text-slate-900">
+        Todo lo que necesitas para imprimir
+      </h2>
+      <p class="mt-3 text-slate-600">
+        Amplio catálogo de cartuchos, tóner e impresoras con stock permanente
+      </p>
+    </div>
+
+    <!-- Catálogo visual -->
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
+      {categories.map((cat) => (
+        <div class="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm">
+          <div class="aspect-square bg-slate-50 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-slate-400 text-xs text-center px-4">[ imagen {cat.title.toLowerCase()} ]</span>
+          </div>
+          <h3 class="text-lg font-medium text-slate-900">{cat.title}</h3>
+          <p class="mt-1 text-sm text-slate-500">{cat.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Punto de recogida DHL/Amazon -->
+    <div class="mt-16 bg-white rounded-2xl border border-slate-100 p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
+      <div class="flex-1 text-center md:text-left">
+        <span class="inline-block bg-green-50 text-green-700 text-xs font-medium px-3 py-1 rounded-full mb-3">
+          Punto de recogida oficial
+        </span>
+        <h3 class="text-xl md:text-2xl font-semibold text-slate-900">
+          Recogida de paquetería sin cita previa
+        </h3>
+        <p class="mt-2 text-slate-600">
+          Punto acreditado para recoger y enviar tus paquetes de DHL y Amazon
+        </p>
+      </div>
+
+      <div class="flex items-center gap-4 shrink-0">
+        <div class="bg-slate-50 rounded-xl px-6 py-4 flex items-center justify-center">
+          <span class="text-slate-500 font-medium text-sm">DHL</span>
+        </div>
+        <div class="bg-slate-50 rounded-xl px-6 py-4 flex items-center justify-center">
+          <span class="text-slate-500 font-medium text-sm">Amazon</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

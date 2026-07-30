@@ -1,0 +1,41 @@
+---
+import Logo from './Logo.astro';
+
+const whatsappNumber = "34635897547"; // recuerda cambiar a 34641435033 en producción
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+  <div class="max-w-6xl mx-auto px-6 py-3 md:h-20 md:flex md:items-center md:justify-between">
+
+    <div class="flex items-center justify-between">
+      <a href="/" aria-label="Command Print - Inicio">
+        <Logo size="sm" />
+      </a>
+
+      <a
+        href={`https://wa.me/${whatsappNumber}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="md:hidden inline-flex items-center bg-green-600 hover:bg-green-700 text-white font-medium px-5 py-2.5 rounded-full transition-colors text-sm"
+      >
+        Escríbenos
+      </a>
+    </div>
+
+    <nav class="flex items-center justify-center gap-6 mt-3 md:mt-0 text-sm md:text-base text-slate-700 font-medium border-t md:border-t-0 border-slate-100 pt-3 md:pt-0">
+      <a href="#servicios" class="hover:text-green-600 transition-colors">Servicios</a>
+      <a href="#resenas" class="hover:text-green-600 transition-colors">Reseñas</a>
+      <a href="#contacto" class="hover:text-green-600 transition-colors">Contacto</a>
+    </nav>
+
+    <a
+      href={`https://wa.me/${whatsappNumber}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hidden md:inline-flex items-center bg-green-600 hover:bg-green-700 text-white font-medium px-5 py-2.5 rounded-full transition-colors"
+    >
+      Escríbenos
+    </a>
+
+  </div>
+</header>

@@ -1,0 +1,129 @@
+---
+interface Props {
+  size?: "sm" | "lg";
+}
+
+const { size = "sm" } = Astro.props;
+
+const fontSize = size === "lg" ? "text-5xl md:text-6xl" : "text-2xl md:text-3xl";
+---
+
+<div class:list={["logo-wrap inline-flex items-center gap-2 font-bold", fontSize]}>
+  <span class="word word-command">
+    <span class="p" style="--tx:-48px;--ty:-28px;--sz:10px;--delay:.05s"></span>
+    <span class="p" style="--tx:-16px;--ty:-48px;--sz:7px;--delay:.09s"></span>
+    <span class="p" style="--tx:14px;--ty:-44px;--sz:8px;--delay:.03s"></span>
+    <span class="p" style="--tx:40px;--ty:-32px;--sz:6px;--delay:.11s"></span>
+    <span class="p" style="--tx:54px;--ty:2px;--sz:9px;--delay:.06s"></span>
+    <span class="p" style="--tx:44px;--ty:26px;--sz:6px;--delay:.1s"></span>
+    <span class="p" style="--tx:18px;--ty:44px;--sz:8px;--delay:.04s"></span>
+    <span class="p" style="--tx:-14px;--ty:42px;--sz:7px;--delay:.08s"></span>
+    <span class="p" style="--tx:-40px;--ty:30px;--sz:6px;--delay:.12s"></span>
+    <span class="p" style="--tx:-54px;--ty:0px;--sz:9px;--delay:.02s"></span>
+    <span class="p" style="--tx:-68px;--ty:-58px;--sz:8px;--delay:.80s"></span>
+    <span class="p" style="--tx:46px;--ty:-78px;--sz:10px;--delay:.78s"></span>
+    <span class="p" style="--tx:-78px;--ty:28px;--sz:12px;--delay:.68s"></span>
+    <span class="p" style="--tx:72px;--ty:16px;--sz:14px;--delay:.70s"></span>
+    Command
+  </span>
+
+  <span class="word word-print">
+    <span class="p" style="--tx:-46px;--ty:-26px;--sz:9px;--delay:.4s"></span>
+    <span class="p" style="--tx:-14px;--ty:-46px;--sz:6px;--delay:.44s"></span>
+    <span class="p" style="--tx:16px;--ty:-42px;--sz:8px;--delay:.38s"></span>
+    <span class="p" style="--tx:42px;--ty:-30px;--sz:5px;--delay:.46s"></span>
+    <span class="p" style="--tx:52px;--ty:4px;--sz:8px;--delay:.41s"></span>
+    <span class="p" style="--tx:42px;--ty:28px;--sz:6px;--delay:.45s"></span>
+    <span class="p" style="--tx:16px;--ty:42px;--sz:7px;--delay:.39s"></span>
+    <span class="p" style="--tx:-12px;--ty:40px;--sz:6px;--delay:.43s"></span>
+    <span class="p" style="--tx:-38px;--ty:28px;--sz:7px;--delay:.47s"></span>
+    <span class="p" style="--tx:-52px;--ty:2px;--sz:8px;--delay:.37s"></span>
+    <span class="p" style="--tx:68px;--ty:58px;--sz:8px;--delay:.80s"></span>
+    <span class="p" style="--tx:-46px;--ty:78px;--sz:10px;--delay:.78s"></span>
+    <span class="p" style="--tx:78px;--ty:-28px;--sz:12px;--delay:.68s"></span>
+    <span class="p" style="--tx:-72px;--ty:-16px;--sz:14px;--delay:.70s"></span>
+
+
+    Print
+  </span>
+</div>
+
+<style>
+  .word {
+    position: relative;
+    display: inline-block;
+    opacity: 0;
+    transform: scale(1.6);
+    filter: blur(3px);
+    animation: appear 1.8s cubic-bezier(0.2, 1.4, 0.4, 1) forwards;
+  }
+
+  .word-command {
+    color: #0f172a;
+    animation-delay: 0.15s;
+  }
+
+  .word-print {
+    color: #16a34a;
+    animation-delay: 0.5s;
+  }
+
+  .p {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: var(--sz);
+    height: var(--sz);
+    background: currentColor;
+    border-radius: 40% 60% 55% 45%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    animation: fly 1.8s cubic-bezier(0.15, 0.7, 0.3, 1) forwards;
+    animation-delay: var(--delay);
+  }
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      transform: scale(1.6);
+      filter: blur(3px);
+    }
+    55% {
+      opacity: 1;
+      transform: scale(0.95);
+      filter: blur(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes fly {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 1;
+    }
+    20% {
+      transform: translate(calc(-50% + var(--tx) * 0.35), calc(-50% + var(--ty) * 0.35)) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(0.25);
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .word {
+      animation: none;
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+    .p {
+      display: none;
+    }
+  }
+</style>

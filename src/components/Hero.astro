@@ -1,0 +1,87 @@
+---
+const whatsappNumber = "34635897547"; // recuerda cambiar a 34641435033 en producción
+const whatsappMessage = encodeURIComponent("Hola, quiero información sobre cartuchos de tinta/tóner");
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+---
+
+<section class="w-full py-16 md:py-24 px-6 bg-white">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+    <!-- Columna izquierda: contenido -->
+    <div>
+      <h1 class="text-4xl md:text-5xl font-semibold text-slate-900 leading-tight">
+        Cartuchos de tinta y tóner en Sanse y Alcobendas
+      </h1>
+
+      <p class="mt-5 text-lg text-slate-600">
+        Envío gratuito en menos de 3 horas o recogida en tienda.
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-3.5 rounded-full transition-colors text-base"
+        >
+          Escríbenos por WhatsApp
+        </a>
+
+        <span class="text-sm text-slate-500">
+          o escanea el código QR →
+        </span>
+      </div>
+
+      <!-- Bloque de ventajas clave -->
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center shrink-0">
+            <span class="text-green-600 text-lg">✓</span>
+          </div>
+          <div>
+            <p class="font-medium text-slate-900 text-sm">+3.000 cartuchos</p>
+            <p class="text-sm text-slate-500">en stock, tinta y tóner</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center shrink-0">
+            <span class="text-green-600 text-lg">✓</span>
+          </div>
+          <div>
+            <p class="font-medium text-slate-900 text-sm">Envío gratis local</p>
+            <p class="text-sm text-slate-500">menos de 3h en Alcobendas y Sanse</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center shrink-0">
+            <span class="text-green-600 text-lg">✓</span>
+          </div>
+          <div>
+            <p class="font-medium text-slate-900 text-sm">Calidad garantizada</p>
+            <p class="text-sm text-slate-500">marcas premium</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna derecha: imagen + QR -->
+    <div class="relative">
+      <div class="bg-slate-50 rounded-2xl border border-slate-100 aspect-[4/3] flex items-center justify-center">
+        <span class="text-slate-400 text-sm">[ imagen de producto/tienda ]</span>
+      </div>
+
+      <div class="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-lg border border-slate-100 p-4 flex items-center gap-3">
+        <div class="w-16 h-16 bg-slate-100 rounded-lg flex items-center justify-center">
+          <span class="text-slate-400 text-[10px] text-center">[ QR ]</span>
+        </div>
+        <div>
+          <p class="text-xs font-medium text-slate-900">Escanea y escríbenos</p>
+          <p class="text-xs text-slate-500">por WhatsApp</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
