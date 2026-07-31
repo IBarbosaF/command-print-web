@@ -2,4 +2,9 @@
 
 @theme {
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+
+  --color-brand-light: #7AB747;
+  --color-brand-dark: #476844;
+  --color-brand-dark-hover: #3a5636;
 }
