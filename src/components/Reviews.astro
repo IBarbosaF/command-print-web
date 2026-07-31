@@ -1,36 +1,32 @@
 ---
 const reviews = [
   {
-    name: "El Patógrafo",
-    initial: "P",
-    text: "Buenos servicios con una atención amable y profesional. Compramos aquí los cartuchos y hacemos los envíos internacionales. ¡Siempre rápido y soluciones encontradas!",
+    name: "Ronro Electrónica 2 C.A.",
+    initial: "R",
+    text: "Excelente servicio y atención al cliente, estoy muy satisfecho con la calidad de los consumibles y el servicio recibido. Los productos son de excelente calidad.",
+    timeAgo: "Hace un mes",
+  },
+  {
+    name: "Bass Ak47",
+    initial: "B",
+    text: "Command Print se posiciona como una empresa altamente confiable y especializada en la comercialización de cartuchos de impresora de alta calidad.",
+    timeAgo: "Hace 6 meses",
+  },
+  {
+    name: "Max David",
+    initial: "M",
+    text: "Excelente servicio para envío de paquetes con DHL y atención en general. Destaco la rapidez, lo eficientes que son y, sobre todo, la excelente atención.",
     timeAgo: "Hace 3 meses",
   },
   {
-    name: "David Soto",
-    initial: "D",
-    text: "Muy buena atención al cliente y también rapidez. La tienda y buena calidad.",
-    timeAgo: "Hace 5 meses",
-  },
-  {
-    name: "Camila Lissette Salina",
-    initial: "C",
-    text: "Muchas gracias. Muy buena atención.",
-    timeAgo: "Hace un mes",
-  },
-  {
-    name: "Paul Caiza",
-    initial: "P",
-    text: "Excelente atención al público",
-    timeAgo: "Hace 5 meses",
-  },
-  {
-    name: "Sara Selia",
-    initial: "S",
-    text: "Una tienda muy completa, muy atentos, profesionales y resolutivos.",
+    name: "Bruno Cantonati",
+    initial: "B",
+    text: "Excelente atención, hacemos los envíos aquí, son rapidísimos, contratamos aquí Digi, muchas gracias la verdad, pagamos muchísimo menos, un acierto total y absoluto.",
     timeAgo: "Hace un mes",
   },
 ];
+
+const googleReviewsUrl = "https://maps.app.goo.gl/Rh8SHR1ep9ZmsJsXA";
 ---
 
 <section id="resenas" class="w-full py-16 md:py-24 px-6 bg-white">
@@ -52,6 +48,15 @@ const reviews = [
         </div>
         <p class="mt-1 text-3xl font-semibold text-slate-900">4,8/5</p>
         <p class="text-sm text-slate-500">basado en reseñas de Google</p>
+
+        <a
+          href={googleReviewsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-4 inline-flex items-center gap-1 text-sm text-brand-light hover:text-brand-dark-hover font-medium"
+        >
+          Ver todas en Google →
+        </a>
       </div>
 
       <!-- Tarjetas de reseñas -->

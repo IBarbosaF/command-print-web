@@ -1,6 +1,6 @@
 ---
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
-const whatsappNumber = "34635897547"; // recuerda cambiar a 34641435033 en producción
+const whatsappNumber = "34641435033"; 
 const whatsappMessage = encodeURIComponent("Hola, quiero información sobre cartuchos de tinta/tóner");
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 ---
@@ -38,21 +38,6 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
         <span class="cmyk-dot d2" style="background:#EC008C;"></span>
         <span class="cmyk-dot d3" style="background:#FFF200; border:0.5px solid #e2e2df;"></span>
         <span class="cmyk-dot d4" style="background: #111111;"></span>
-      </div>
-
-      <div class="mt-5 flex flex-wrap items-center gap-4">
-        <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 bg-brand-light hover:bg-brand-dark-hover text-white font-medium px-6 py-3.5 rounded-full transition-colors text-base"
-        >
-          Escríbenos por WhatsApp
-        </a>
-
-        <span class="text-sm text-slate-500">
-          o escanea el código QR →
-        </span>
       </div>
 
       <!-- Bloque de ventajas clave -->
@@ -118,15 +103,6 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
         />
       </div>
 
-      <div class="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-lg border border-slate-100 p-4 flex items-center gap-3">
-        <div class="w-16 h-16 bg-slate-100 rounded-lg flex items-center justify-center">
-          <span class="text-slate-400 text-[10px] text-center">[ QR ]</span>
-        </div>
-        <div>
-          <p class="text-xs font-medium text-slate-900">Escanea y escríbenos</p>
-          <p class="text-xs text-slate-500">por WhatsApp</p>
-        </div>
-      </div>
     </div>
 
   </div>
