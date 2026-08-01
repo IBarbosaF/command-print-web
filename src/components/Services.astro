@@ -16,8 +16,8 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
 
     <div class="mt-12 grid sm:grid-cols-3 gap-6">
 
-      <!-- Comprar cartuchos -->
-      <div class="service-card bg-white rounded-2xl border border-slate-100 shadow-sm p-6 flex flex-col h-full">
+      <!-- Comprar cartuchos: enlaza al formulario -->
+      <a href="#contacto" class="service-card bg-white rounded-2xl border border-slate-100 shadow-sm p-6 flex flex-col h-full">
         <span class="inline-block bg-brand-light/10 text-brand-light text-xs font-medium px-3 py-1 rounded-full mb-3 w-fit">
           Lo más buscado
         </span>
@@ -34,7 +34,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
         </div>
         <h3 class="mt-4 text-lg font-medium text-brand-dark">Comprar cartuchos</h3>
         <p class="mt-1 text-sm text-slate-500 flex-1">Cartuchos de tinta y tóner, y todos los accesorios que necesitas para tu impresora.</p>
-      </div>
+      </a>
 
       <!-- Punto Digi -->
       <div class="service-card bg-white rounded-2xl border border-slate-100 shadow-sm p-6 flex flex-col h-full">
@@ -51,15 +51,15 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
           </span>
         </div>
         <h3 class="mt-4 text-lg font-medium text-brand-dark">Punto Digi</h3>
-        <p class="mt-1 text-sm text-slate-500 flex-1">Gestiones y servicios digitales, rápidos, fáciles y cerca de ti.</p>
+        <p class="mt-1 text-sm text-slate-500 flex-1">La compañía de telefonía móvil, internet y TV. Disfruta de la red de fibra más rápida de España.</p>
       </div>
 
-      <!-- Punto de paquetería -->
+      <!-- Punto de paquetería: DHL y Celeritas -->
       <div class="service-card bg-white rounded-2xl border border-slate-100 shadow-sm p-6 flex flex-col h-full">
         <span class="inline-block text-xs font-medium px-3 py-1 rounded-full mb-3 w-fit invisible">spacer</span>
         <div class="tilt-wrap relative">
-          <div class="tilt-inner aspect-video bg-brand-light/30 rounded-xl overflow-hidden border-2 border-brand-dark flex items-center justify-center p-3">
-            <img src={`${base}dhlAmazon.png`} alt="Punto de recogida DHL y Amazon" class="max-w-full max-h-full object-contain block mx-auto" />
+          <div class="tilt-inner aspect-video bg-brand-light/10 rounded-xl overflow-hidden border-2 border-brand-dark flex items-center justify-center ">
+            <img src={`${base}dhlCeleritas1.png`} alt="Punto de recogida DHL y Celeritas" class="max-w-full max-h-full object-contain block mx-auto" />
           </div>
           <span class="badge-icon">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
@@ -68,7 +68,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
           </span>
         </div>
         <h3 class="mt-4 text-lg font-medium text-brand-dark">Punto de paquetería</h3>
-        <p class="mt-1 text-sm text-slate-500 flex-1">Recogida y envío sin cita previa (DHL y Amazon).</p>
+        <p class="mt-1 text-sm text-slate-500 flex-1">Recogida y envío sin cita previa (DHL y Celeritas).</p>
       </div>
 
     </div>
@@ -95,9 +95,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
     to { transform: rotate(360deg); }
   }
 
-  .tilt-wrap {
-    perspective: 800px;
-  }
+  .tilt-wrap { perspective: 800px; }
 
   .tilt-inner {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -106,7 +104,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
 
   .service-card:hover .tilt-inner {
     transform: rotateY(10deg) rotateX(-6deg) scale(1.04);
-    box-shadow: -8px 12px 24px -8px rgba(0, 0, 0, 0.74);
+    box-shadow: -8px 12px 24px -8px rgba(0,0,0,0.25);
   }
 
   .badge-icon {
