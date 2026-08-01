@@ -16,31 +16,59 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
 
     <div class="mt-12 grid sm:grid-cols-3 gap-6">
 
-      <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
-        <span class="inline-block bg-brand-light/10 text-brand-light text-xs font-medium px-3 py-1 rounded-full mb-3">
+      <!-- Comprar cartuchos -->
+      <div class="service-card bg-white rounded-2xl border border-slate-100 shadow-sm p-6 flex flex-col h-full">
+        <span class="inline-block bg-brand-light/10 text-brand-light text-xs font-medium px-3 py-1 rounded-full mb-3 w-fit">
           Lo más buscado
         </span>
-        <div class="aspect-video bg-slate-50 rounded-xl overflow-hidden mb-4 border-2 border-brand-dark">
-          <img src={`${base}cartuchos.png`} alt="Cartuchos de tinta y tóner" class="w-full h-full object-cover block" />
+        <div class="tilt-wrap relative">
+          <div class="tilt-inner aspect-video bg-slate-50 rounded-xl overflow-hidden border-2 border-brand-dark">
+            <img src={`${base}cartuchos.png`} alt="Cartuchos de tinta y tóner" class="w-full h-full object-cover block" />
+          </div>
+          <span class="badge-icon">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+          </span>
         </div>
-        <h3 class="text-lg font-medium text-brand-dark">Comprar cartuchos</h3>
-        <p class="mt-1 text-sm text-slate-500">Tinta, tóner y accesorios para tu impresora</p>
+        <h3 class="mt-4 text-lg font-medium text-brand-dark">Comprar cartuchos</h3>
+        <p class="mt-1 text-sm text-slate-500 flex-1">Cartuchos de tinta y tóner, y todos los accesorios que necesitas para tu impresora.</p>
       </div>
 
-      <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
-        <div class="aspect-video bg-slate-50 rounded-xl overflow-hidden mb-4 border-2 border-brand-dark">
-          <img src={`${base}digi.png`} alt="Punto Digi" class="w-full h-full object-cover block" />
+      <!-- Punto Digi -->
+      <div class="service-card bg-white rounded-2xl border border-slate-100 shadow-sm p-6 flex flex-col h-full">
+        <span class="inline-block text-xs font-medium px-3 py-1 rounded-full mb-3 w-fit invisible">spacer</span>
+        <div class="tilt-wrap relative">
+          <div class="tilt-inner aspect-video bg-slate-50 rounded-xl overflow-hidden border-2 border-brand-dark">
+            <img src={`${base}digi.png`} alt="Punto Digi" class="w-full h-full object-cover block" />
+          </div>
+          <span class="badge-icon">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <path d="M8 21h8M12 17v4" stroke-linecap="round"/>
+            </svg>
+          </span>
         </div>
-        <h3 class="text-lg font-medium text-brand-dark">Punto Digi</h3>
-        <p class="mt-1 text-sm text-slate-500">Gestiones y servicios digitales</p>
+        <h3 class="mt-4 text-lg font-medium text-brand-dark">Punto Digi</h3>
+        <p class="mt-1 text-sm text-slate-500 flex-1">Gestiones y servicios digitales, rápidos, fáciles y cerca de ti.</p>
       </div>
 
-      <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
-        <div class="aspect-video bg-brand-light/10 rounded-xl overflow-hidden mb-4 flex items-center justify-center p-4 border-2 border-brand-dark">
-          <img src={`${base}dhlAmazon.png`} alt="Punto de recogida DHL y Amazon" class="max-w-full max-h-full object-contain block mx-auto" />
+      <!-- Punto de paquetería -->
+      <div class="service-card bg-white rounded-2xl border border-slate-100 shadow-sm p-6 flex flex-col h-full">
+        <span class="inline-block text-xs font-medium px-3 py-1 rounded-full mb-3 w-fit invisible">spacer</span>
+        <div class="tilt-wrap relative">
+          <div class="tilt-inner aspect-video bg-brand-light/30 rounded-xl overflow-hidden border-2 border-brand-dark flex items-center justify-center p-3">
+            <img src={`${base}dhlAmazon.png`} alt="Punto de recogida DHL y Amazon" class="max-w-full max-h-full object-contain block mx-auto" />
+          </div>
+          <span class="badge-icon">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M21 8l-9-5-9 5 9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/>
+            </svg>
+          </span>
         </div>
-        <h3 class="text-lg font-medium text-brand-dark">Punto de paquetería</h3>
-        <p class="mt-1 text-sm text-slate-500">Recogida y envío sin cita previa (DHL y Amazon)</p>
+        <h3 class="mt-4 text-lg font-medium text-brand-dark">Punto de paquetería</h3>
+        <p class="mt-1 text-sm text-slate-500 flex-1">Recogida y envío sin cita previa (DHL y Amazon).</p>
       </div>
 
     </div>
@@ -58,7 +86,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
     border-radius: 50%;
     background-image: radial-gradient(var(--color-brand-dark) 1.4px, transparent 1.4px);
     background-size: 9px 9px;
-    opacity: 0.45;
+    opacity: 0.15;
     animation: spin 60s linear infinite;
     pointer-events: none;
   }
@@ -66,7 +94,45 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
   }
+
+  .tilt-wrap {
+    perspective: 800px;
+  }
+
+  .tilt-inner {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+  }
+
+  .service-card:hover .tilt-inner {
+    transform: rotateY(10deg) rotateX(-6deg) scale(1.04);
+    box-shadow: -8px 12px 24px -8px rgba(0, 0, 0, 0.74);
+  }
+
+  .badge-icon {
+    position: absolute;
+    bottom: -10px;
+    left: 12px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--color-brand-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    z-index: 2;
+    transition: transform 0.4s ease;
+  }
+
+  .service-card:hover .badge-icon {
+    transform: scale(1.1) translateY(-2px);
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .halftone { animation: none; }
+    .tilt-inner, .badge-icon { transition: none; }
+    .service-card:hover .tilt-inner,
+    .service-card:hover .badge-icon { transform: none; }
   }
 </style>
