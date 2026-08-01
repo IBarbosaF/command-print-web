@@ -1,23 +1,12 @@
 ---
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
-const categories = [
-  {
-    title: "Cartuchos de tinta",
-    description: "Compatibles y originales para las principales marcas",
-  },
-  {
-    title: "Tóner",
-    description: "Para impresoras láser, todas las capacidades",
-  },
-  {
-    title: "Impresoras",
-    description: "Multifunción e impresoras de oficina",
-  },
-];
 ---
 
-<section id="servicios" class="w-full py-16 md:py-24 px-6 bg-slate-50">
-  <div class="max-w-6xl mx-auto">
+<section id="servicios" class="relative w-full py-16 md:py-24 px-6 bg-slate-50 overflow-hidden">
+
+  <span class="halftone" aria-hidden="true"></span>
+
+  <div class="relative max-w-6xl mx-auto">
 
     <div class="text-center max-w-2xl mx-auto">
       <h2 class="text-2xl md:text-3xl font-semibold text-slate-900">
@@ -25,56 +14,59 @@ const categories = [
       </h2>
     </div>
 
-    <div class="mt-12 grid gap-6">
+    <div class="mt-12 grid sm:grid-cols-3 gap-6">
 
-      <!-- Servicio principal: Comprar cartuchos -->
-      <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
-        <div class="flex-1 text-center md:text-left">
-          <span class="inline-block bg-green-50 text-green-700 text-xs font-medium px-3 py-1 rounded-full mb-3">
-            Lo más buscado
-          </span>
-          <h3 class="text-xl md:text-2xl font-semibold text-slate-900">
-            Comprar cartuchos
-          </h3>
-          <p class="mt-2 text-slate-600">
-            Cartuchos de tinta y tóner, y todos los accesorios que necesitas para tu impresora
-          </p>
+      <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+        <span class="inline-block bg-brand-light/10 text-brand-light text-xs font-medium px-3 py-1 rounded-full mb-3">
+          Lo más buscado
+        </span>
+        <div class="aspect-video bg-slate-50 rounded-xl overflow-hidden mb-4 border-2 border-brand-dark">
+          <img src={`${base}cartuchos.png`} alt="Cartuchos de tinta y tóner" class="w-full h-full object-cover block" />
         </div>
-          <div class="w-full md:w-64 aspect-video md:aspect-square bg-slate-50 rounded-xl overflow-hidden shrink-0">
-            <img
-              src={`${base}cartuchos.png`}
-              alt="Cartuchos de tinta y tóner"
-              class="w-full h-full object-cover block"
-            />
-          </div>
+        <h3 class="text-lg font-medium text-brand-dark">Comprar cartuchos</h3>
+        <p class="mt-1 text-sm text-slate-500">Tinta, tóner y accesorios para tu impresora</p>
       </div>
 
-      <!-- Servicios secundarios -->
-      <div class="grid sm:grid-cols-2 gap-6">
-
-        <div class="bg-white rounded-2xl border border-slate-50 shadow-sm p-6">
-          <div class="aspect-video bg-slate-50 rounded-xl overflow-hidden mb-4 border-2 border-brand-dark">
-            <img src={`${base}digi.png`} alt="Punto Digi" class="w-full h-full object-cover block" />
-          </div>
-          <h3 class="text-lg font-medium text-slate-900">Punto Digi</h3>
-          <p class="mt-1 text-sm text-slate-500">Gestiones y servicios digitales</p>
+      <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+        <div class="aspect-video bg-slate-50 rounded-xl overflow-hidden mb-4 border-2 border-brand-dark">
+          <img src={`${base}digi.png`} alt="Punto Digi" class="w-full h-full object-cover block" />
         </div>
+        <h3 class="text-lg font-medium text-brand-dark">Punto Digi</h3>
+        <p class="mt-1 text-sm text-slate-500">Gestiones y servicios digitales</p>
+      </div>
 
-        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
-          <div class="aspect-video bg-brand-light/50 rounded-xl overflow-hidden mb-4 flex items-center justify-center p-4 border-2 border-brand-dark">
-            <img
-              src={`${base}dhlAmazon.png`}
-              alt="Punto de recogida DHL y Amazon"
-              class="max-w-full max-h-full object-contain block mx-auto"
-            />
-          </div>
-          <h3 class="text-lg font-medium text-brand-dark">Punto de paquetería</h3>
-          <p class="mt-1 text-sm text-slate-500">Recogida y envío sin cita previa (DHL y Amazon)</p>
+      <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+        <div class="aspect-video bg-brand-light/10 rounded-xl overflow-hidden mb-4 flex items-center justify-center p-4 border-2 border-brand-dark">
+          <img src={`${base}dhlAmazon.png`} alt="Punto de recogida DHL y Amazon" class="max-w-full max-h-full object-contain block mx-auto" />
         </div>
-
+        <h3 class="text-lg font-medium text-brand-dark">Punto de paquetería</h3>
+        <p class="mt-1 text-sm text-slate-500">Recogida y envío sin cita previa (DHL y Amazon)</p>
       </div>
 
     </div>
 
   </div>
 </section>
+
+<style>
+  .halftone {
+    position: absolute;
+    top: -60px;
+    left: -60px;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background-image: radial-gradient(var(--color-brand-dark) 1.4px, transparent 1.4px);
+    background-size: 9px 9px;
+    opacity: 0.45;
+    animation: spin 60s linear infinite;
+    pointer-events: none;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .halftone { animation: none; }
+  }
+</style>
